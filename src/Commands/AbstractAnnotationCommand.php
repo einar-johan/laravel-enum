@@ -138,7 +138,11 @@ abstract class AbstractAnnotationCommand extends Command
         // Make sure we don't replace too much
         $contents = substr_replace(
             $contents,
-            sprintf("%s%s", $docBlock->generate(), $classDeclaration),
+            str_replace(
+                "* @method static static\n *",
+                '* @method static static',
+                sprintf("%s%s", $docBlock->generate(), $classDeclaration)
+            ),
             $classDeclarationOffset,
             strlen($classDeclaration)
         );

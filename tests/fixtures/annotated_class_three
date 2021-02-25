@@ -1,0 +1,15 @@
+<?php
+
+namespace BenSampo\Enum\Tests\Enums\Annotate;
+
+use BenSampo\Enum\Enum;
+
+/**
+ * @method static static AnExampleOfAValueThatIsReallyLongAndShouldNotBeSplitOverTwoLines()
+ * @method static static XYZ()
+ */
+final class AnnotateTestThreeEnum extends Enum
+{
+    const AnExampleOfAValueThatIsReallyLongAndShouldNotBeSplitOverTwoLines = 'test';
+    const XYZ = 'xyz';
+}
